@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus on Today</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css"
+      integrity="sha512-M5Kq4YVQrjg5c2wsZSn27Dkfm/2ALfxmun0vUE3mPiJyK53hQBHYCVAtvMYEC7ZXmYLg8DVG4tF8gD27WmDbsg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body>
+    <section class="mt-10 mx-auto m-4">
+      <h1
+        class="font-bold text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#48A300]"
+      >
+        Focus on <span class="text-[#61481C]">Today</span>
+      </h1>
+      <!-- layout -->
+      <main
+        class="bg-[#fbfbfb] max-w-[660px] h-[810px] mx-auto mt-10 p-11 rounded-lg box-shadow relative"
+      >
+        <div class="flex items-center gap-3">
+          <h1 class="font-bold text-[34px]">Today</h1>
+          <div class="relative w-[60px] h-[60px]">
+            <!-- Sun image (behind) -->
+            <img
+              class="w-full h-full animate-spin-slow"
+              src="./images/Vector.png"
+              alt="SUN image"
+            />
+
+            <!-- Eye/Nose/Mouth image (centered & above) -->
+            <img
+              class="w-3.5 h-[25px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+              src="./images/Group 3.svg"
+              alt="eye nose mouth"
+            />
+          </div>
+        </div>
+
+        <p
+          class="mt-8 text-start font-medium leading-6 text-[16px] align-middle text-[#858585]"
+        >
+          Raise the bar by completing your goals!
+        </p>
+
+        <!-- <progress class="w-full h-2 bg-[#E5E5E5] rounded-lg"></progress> -->
+        <div class="progress-bar h-[30px] mt-5 bg-[#48A3001A] rounded-[15px]">
+          <div
+            class="progress-value bg-[#48A300] h-full rounded-[15px] flex w-0 my-5  overflow-hidden transition-all  duration-400 ease-in-out"
+          >
+            <p
+              class="text-[12px] sm:text-[14px] sm:pb-[7.5px] font-medium px-2.5 pt-[5.5px] text-center text-[#EEFFE0]"
+            >
+              <span class="pl-5"> 2/3 Completed </span>
+            </p>
+          </div>
+          <!-- <div class="progress-value bg-[#48A300] h-[30px] rounded-[15px] max-w-[66%]"></div>
+                <div class="progress-value bg-[#48A300] h-[30px] rounded-[15px] max-w-[100%]"></div> -->
+</div>
+          <p
+            class="error-label max-w-[320px] mt-5 text-[16px] font-medium flex justify-start text-[#FF5151]"
+            style="display: none"
+          >
+            Please set all the 3 goals!
+          </p>
+          <div
+            class="goal-container mb-[46px] mt-6  bg-white border border-solid border-[#D9D9D9] rounded-[17px] max-w-[570px] h-[82px] flex pl-5 items-center"
+          >
+            <div
+              class="custom-checkbox cursor-pointer shrink-0 h-6 w-6 border-2 rounded-[50%] text-[#d9d9d9]"
+            >
+              <img
+                class="check-icon"
+                src="./images/check-icon.svg"
+                alt="check-icon"
+              />
+            </div>
+            <input
+               id="first"
+              type="text"
+              placeholder="Add your goal"
+              class="placeholder:text-[#d9d9d9] font-medium self-stretch max-w-full grow outline-none pl-5 goal-input"
+            />
+          </div>
+
+          <div
+            class="goal-container mb-[46px] bg-white border border-solid border-[#D9D9D9] rounded-[17px] max-w-[570px] h-[82px] flex pl-5 items-center"
+          >
+            <div
+              class="custom-checkbox cursor-pointer shrink-0 h-6 w-6 border-2 rounded-[50%] text-[#d9d9d9]"
+            >
+              <img
+                class="check-icon"
+                src="./images/check-icon.svg"
+                alt="check-icon"
+              />
+            </div>
+            <input
+              id="second"
+              type="text"
+              placeholder="Add your goal"
+              class="placeholder:text-[#d9d9d9] font-medium self-stretch max-w-full grow outline-none pl-5 goal-input"
+            />
+          </div>
+
+          <div
+            class="goal-container mb-[46px] bg-white border border-solid border-[#D9D9D9] rounded-[17px] max-w-[570px] h-[82px] flex pl-5 items-center"
+          >
+            <div
+              class="custom-checkbox cursor-pointer shrink-0 h-6 w-6 border-2 rounded-[50%] text-[#d9d9d9]"
+
+            >
+              <img
+                class="check-icon"
+                src="./images/check-icon.svg"
+                alt="check-icon"
+              />
+            </div>
+            <input
+              id="third"
+              type="text"
+              placeholder="Add your goal"
+              class="placeholder:text-[#d9d9d9] font-medium self-stretch max-w-full grow outline-none pl-5 goal-input"
+            />
+          </div>
+          <p class="quote font-medium text-[18px] mt-[46px] text-center">
+            “Move one step ahead, today!”
+          </p>
+          <p
+            class="copyright flex flex-col text-center text-[#858585] text-[12px] font-medium mt-16"
+          >
+            copyright &copy; All Right reserved 2025
+            <span class="mt-1 pb-3">Made with ❤️ by Muhammad Zakwan</span>
+          </p>
+        </div>
+      </main>
+    </section>
+  </body>
+</html>
+
+
+
+<!-- 
+// checkBoxList.forEach((checkbox) => {
+//   checkbox.addEventListener('click', (e) => {
+//     const allGoalsAdded = [...inputFields].every((input) => {
+//       return input.value.trim() !== ''; // check input field is not empty
+//     })
+//     if (allGoalsAdded) {
+//       checkbox.parentElement.classList.toggle('completed');
+//       progressValue.style.width =  '33.33%';
+//       errorLabel.style.display = 'none';
+
+//     } else {
+//       errorLabel.style.display = 'block';
+//     }
+
+//   })
+// })
+//  inputFields.forEach((input) => {
+//    input.addEventListener('focus', () => {
+//      errorLabel.style.display = 'none';
+//    })
+//    input.addEventListener('input',(e)=>{
+//     allGoals[input.id] ={
+//       goal: input.value,
+//       completed: false,
+//     };
+//     localStorage.setItem('allGoals', JSON.stringify(allGoals));
+//   })
+
+//  });
+
+/*const allGoals = {
+  first : {
+    name: 'goal1',
+    completed: false,
+  },
+  second : {
+    name: 'goal2',
+    completed: false,
+  },
+  third:{
+    name: 'goal3',
+    completed: false,
+  }
+};*/
++ -->
