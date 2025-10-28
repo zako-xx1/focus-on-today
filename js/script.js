@@ -3,16 +3,23 @@ const checkBoxList = document.querySelectorAll('.custom-checkbox')
 const inputFields = document.querySelectorAll('.goal-input')
 const errorLabel = document.querySelector('.error-label')
 const progressBar = document.querySelector('.progress-bar')
-const progressLabel =  document.getElementById('progress-label')
+const progressLabel = document.getElementById('progress-label')
+const comment = document.getElementById('comment')
 const progressValue = document.querySelector('.progress-value')
 
 const allQuotes = [
-   
+
   'Raise the bar by completing your goals!',
   'Well begun is half done!',
   'Just a step away, keep going!',
   'Whoa! You just completed all the goals, time for chill :) ',
- 
+
+]
+const allComments = [
+  '“Move one step ahead, today!”',
+  '“Keep Going, You’re making great progress!”',
+  'just one goal is remaining :)”',
+  '“hurrah! you are completed all goals :)”'
 ]
 //get tiem into local storage
 let allGoals = JSON.parse(localStorage.getItem('todayGoals')) || {};
@@ -23,6 +30,7 @@ let completedGoalsCount = Object.values(allGoals).filter(
 progressValue.style.width = `${completedGoalsCount / 3 * 100}%`;
 progressValue.firstElementChild.textContent = `${completedGoalsCount}/3 completed`;
 progressLabel.innerText = allQuotes[completedGoalsCount]
+comment.innerText = allComments[completedGoalsCount]
 
 // loop in array  to  get value checkbox
 checkBoxList.forEach((checkbox) => {
@@ -44,6 +52,8 @@ checkBoxList.forEach((checkbox) => {
       progressValue.style.width = `${completedGoalsCount / 3 * 100}%`;
       progressValue.firstElementChild.textContent = `${completedGoalsCount}/3 completed`;
       progressLabel.textContent = allQuotes[completedGoalsCount]
+      comment.innerText = allComments[completedGoalsCount]
+
       localStorage.setItem('todayGoals', JSON.stringify(allGoals));
     } else {
       errorLabel.style.display = 'block';
@@ -64,11 +74,11 @@ inputFields.forEach((input) => {
   })
   //if local storage have input value
   input.addEventListener('input', (e) => {
-if (allGoals[input.id].completed) {
-  input.value = allGoals[input.id].goal;
-  input.setAttribute('readonly', true);
-  input.style.cursor = "url('../images/cursor.svg'), not-allowed";
-}
+    if (allGoals[input.id].completed) {
+      input.value = allGoals[input.id].goal;
+      input.setAttribute('readonly', true);
+      input.style.cursor = "url('../images/cursor.svg'), not-allowed";
+    }
 
     allGoals[input.id] = {
       goal: input.value,
