@@ -22,7 +22,20 @@ const allComments = [
   '“hurrah! you are completed all goals :)”'
 ]
 //get tiem into local storage
-let allGoals = JSON.parse(localStorage.getItem('todayGoals')) || {};
+let allGoals = JSON.parse(localStorage.getItem('todayGoals')) || {
+  first : {
+    goal: '',
+    completed:false 
+  },
+   second : {
+    goal: '',
+    completed:false 
+  },
+   third : {
+    goal: '',
+    completed:false 
+  }
+};
 //check how many complete
 let completedGoalsCount = Object.values(allGoals).filter(
   (goal) => goal.completed
@@ -81,8 +94,7 @@ inputFields.forEach((input) => {
     }
 
     allGoals[input.id] = {
-      goal: input.value,
-      completed: false
+      goal: input.value
     }
     // setitem into localStorage
     localStorage.setItem('todayGoals', JSON.stringify(allGoals));
